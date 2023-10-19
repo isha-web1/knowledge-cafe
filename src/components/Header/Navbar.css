@@ -1,0 +1,11 @@
+.random-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.nav hr{
+    width: 90%;
+    margin: auto;
+    margin-top: 2px;
+}
