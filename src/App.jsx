@@ -1,18 +1,19 @@
 
 import './App.css'
 import Blogs from './components/blogs/Blogs'
-import BooksMarks from './components/booksmark/Booksmarks'
-import Header from './components/Header/Header'
+import BookMarks from './components/BookMarks/BookMarks'
+import Navbar from './components/Header/Navbar'
+
 
 function App() {
   
 
   return (
     <>
-      <Header></Header>
+      <Navbar></Navbar>
       <div className='md : flex'>
       <Blogs></Blogs>
-      <BooksMarks></BooksMarks>
+      <BookMarks></BookMarks>
       </div>
       
     </>
