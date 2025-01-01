@@ -8,18 +8,24 @@ import Navbar from './components/Header/Navbar'
 
 function App() {
   const [bookMarks, setBookmarks]= useState([])
+  const [readTime, setRedTime] = useState(0)
 
   const handleAddToBookmarks = blog => {
     const newBookMark = [...bookMarks, blog]
     setBookmarks(newBookMark)
   }
 
+  const handleReadTime = time =>{
+    const newReadTime = readTime + time;
+    setRedTime(newReadTime)
+  }
+
   return (
     <>
       <Navbar></Navbar>
       <div className='md : flex max-w-7xl mx-auto'>
-      <Blogs handleAddToBookmarks={handleAddToBookmarks}></Blogs>
-      <BookMarks bookMarks={bookMarks}></BookMarks>
+      <Blogs handleAddToBookmarks={handleAddToBookmarks} handleReadTime={handleReadTime}></Blogs>
+      <BookMarks bookMarks={bookMarks} readTime={readTime}></BookMarks>
       </div>
       
     </>

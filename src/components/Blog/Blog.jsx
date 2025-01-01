@@ -1,12 +1,12 @@
 import React from 'react';
 import {  FaBookmark } from 'react-icons/fa';
 
-const Blog = ({blog, handleAddToBookmarks}) => {
+const Blog = ({blog, handleAddToBookmarks, handleReadTime}) => {
     const {title, cover,author_img,author,reading_time,hashtags,posted_date}= blog;
     return (
-        <div className='mb-20'>
+        <div className='mb-20 space-y-4'>
             <img className='w-full mb-8' src={cover} alt={`this is the cover picture${title}`} />
-            <div className='flex justify-between mb-4'>
+            <div className='flex justify-between mb-4 '>
                 <div className='flex'>
                      <img className='w-14' src={author_img} alt="" />
                      <div className='ml-6'>
@@ -23,9 +23,12 @@ const Blog = ({blog, handleAddToBookmarks}) => {
                 </div>
             </div>
             <h2 className="text-4xl">title :{title}</h2>
-            {
+           <p>
+           {
                 hashtags.map((hash ,idx)=> <span key={idx}> <a href="">#{hash}</a> </span> )
             }
+           </p>
+            <button onClick={()=>handleReadTime(reading_time)} className='text-purple-600 font-bold underline'>Mark as read</button>
         </div>
     );
 };
